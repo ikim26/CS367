@@ -1,0 +1,27 @@
+help
+quit
+new
+active
+list
+close------------------------------------------
+
+open
+write
+print
+
+exec
+new (with args) (new + exec)
+
+cancel
+pause
+resume
+
+resume + wait
+
+reaping
+
+ctrl-c
+ctrl-v
+
+race conditions + signals
+sigchld

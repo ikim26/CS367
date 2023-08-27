@@ -1,0 +1,23 @@
+	.text
+	.globl main
+main:
+	movq $2, %rdi	#x
+	movq $3, %rsi	#y
+	movq $4, %rdx	#z
+
+	# return (16*x + 4*y + z)
+
+	# imulq $16, %rdi # RDI = RDI*16 = x*16
+	shlq $4, %rdi   # RDI = RDI << 4 = x*16
+
+	#imulq $4, %rsi
+	shlq $2, %rsi   # RSI = RSI << 2 = y*4
+
+	addq %rdi, %rsi # RSI = RSI + RDI = x*16 + y*4
+	addq %rsi, %rdx # RDX = RDX + RSI = z + (x*16 + y*4)
+
+	movq %rdx, %rax # return = RAX = RDX = (16*x + 4*y + z)
+
+	ret
+
+	
